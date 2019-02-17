@@ -1,0 +1,27 @@
+>>> from CryptoPlus.Cipher import python_AES, AES, python_DES, DES, python_DES3
+>>> 
+>>> key = '2b7e151628aed2a6abf7158809cf4f3c'.decode('hex')
+>>> plaintext = '6bc1bee22e409f96e93d7e117393172a'.decode('hex')
+>>> cipher = AES.new(key,AES.MODE_CMAC)
+>>> cipher.encrypt(plaintext).encode('hex')
+'070a16b46b4d4144f79bdd9dd04a287c'
+>>> 
+>>> key = '2b7e151628aed2a6abf7158809cf4f3c'.decode('hex')
+>>> plaintext = '285F245F2212226A000424290008237C0002000800082629001853812341001841E900084E42234300182342000824A900144ED4'.decode('hex')
+>>> cipher = AES.new(key,AES.MODE_CMAC)
+>>> cipher.encrypt(plaintext).encode('hex')
+'d08820d6d655feebbff8c6aaf745a9a5'
+
+285F245F2212226A000424290008237C0002000800082629001853812341001841E900084E42234300182342000824A900144ED4
+
+
+
+
+        key = '2b7e151628aed2a6abf7158809cf4f3c'.decode('hex')
+        plaintext = '285F245F2212226A000424290008237C0002000800082629001853812341001841E900084E42234300182342000824A900144ED4'.decode(
+        'hex')
+        cipher = AES.new(key, AES.MODE_CMAC)
+        cout = cipher.encrypt(plaintext).encode('hex')
+        file = open("datasrec.txt", "w")
+        file.write(cout)
+        file.close()
